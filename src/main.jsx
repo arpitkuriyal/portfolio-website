@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Analytics } from '@vercel/analytics/react'
 import './styles.css'
 
 const github = 'https://github.com/arpitkuriyal'
@@ -151,4 +152,9 @@ function App() {
   )
 }
 
-createRoot(document.getElementById('root')).render(<StrictMode><App /></StrictMode>)
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+  <App />
+  <Analytics />
+  </StrictMode>
+)
