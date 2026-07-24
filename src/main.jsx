@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import './styles.css'
 
 const github = 'https://github.com/arpitkuriyal'
+const mediumPost = 'https://medium.com/@arpitkuriyal2002/the-two-files-every-go-developer-ignores-until-production-go-mod-and-go-sum-01c595dfdecd'
 
 const projects = [
   {
@@ -47,6 +48,7 @@ function App() {
         <nav aria-label="Main navigation">
           <a href="#projects">projects</a>
           <a href="#experience">experience</a>
+          <a href="#writing">writing</a>
           <a href="#about">about</a>
           <a href="#contact">contact</a>
         </nav>
@@ -114,6 +116,28 @@ function App() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="writing" aria-labelledby="writing-title">
+        <div className="section-heading">
+          <p className="eyebrow">writing</p>
+          <h2 id="writing-title">Blog</h2>
+        </div>
+        <article className="blog-post">
+          <div className="blog-meta">
+            <p>Medium</p>
+            <p>Go</p>
+          </div>
+          <div className="blog-copy">
+            <ExternalLink className="blog-title" href={mediumPost}>
+              The Two Files Every Go Developer Ignores Until Production: go.mod and go.sum
+            </ExternalLink>
+            <p>
+              A practical look at the Go module files that quietly define how your dependencies behave in production.
+            </p>
+            <ExternalLink className="read-post" href={mediumPost}>Read on Medium</ExternalLink>
+          </div>
+        </article>
       </section>
 
       <section className="about" id="about" aria-labelledby="about-title">
