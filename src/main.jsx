@@ -40,6 +40,14 @@ function ExternalLink({ href, children, className = '' }) {
   )
 }
 
+function ContactIcon({ href, label, children }) {
+  return (
+    <a className="contact-icon" href={href} aria-label={label} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
+      {children}
+    </a>
+  )
+}
+
 function App() {
   return (
     <main>
@@ -60,12 +68,6 @@ function App() {
         <p className="intro">
           I’m Arpit. I like Go, TypeScript, distributed systems, and understanding the parts behind the interface.
         </p>
-        <div className="links">
-          <ExternalLink href={github}>GitHub</ExternalLink>
-          <ExternalLink href="https://www.linkedin.com/in/arpit-kuriyal-8b6190265/">LinkedIn</ExternalLink>
-          <ExternalLink href="https://x.com/ArpitKuriyal12">X</ExternalLink>
-          <a href="mailto:arpitkuriyal2002@gmail.com">Email</a>
-        </div>
       </section>
 
       <section id="experience" aria-labelledby="experience-title">
@@ -167,9 +169,31 @@ function App() {
         </div>
       </section>
 
-      <footer id="contact">
-        <p>Want to build something useful?</p>
-        <ExternalLink href="https://www.linkedin.com/in/arpit-kuriyal-8b6190265/">Get in touch on LinkedIn</ExternalLink>
+      <section className="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p className="eyebrow">contact</p>
+          <h2 id="contact-title">Let’s build something useful.</h2>
+        </div>
+        <div className="contact-copy">
+          <p>Have a project in mind?</p>
+          <div className="contact-links">
+            <ContactIcon href="mailto:arpitkuriyal2002@gmail.com" label="Email Arpit">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+            </ContactIcon>
+            <ContactIcon href="https://x.com/ArpitKuriyal12" label="Arpit on X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20" /></svg>
+            </ContactIcon>
+            <ContactIcon href="https://www.linkedin.com/in/arpit-kuriyal-8b6190265/" label="Arpit on LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5V18M6.5 6.5v.01M10.5 18v-8.5M10.5 13.2c0-2.4 1.4-3.7 3.4-3.7 2.3 0 3.6 1.5 3.6 4.4V18" /></svg>
+            </ContactIcon>
+            <ContactIcon href={github} label="Arpit on GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.5 1.4-4.5-2.5-6.3-3M15 21v-3.5a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6.2 0C6.3 2.3 5.3 2.6 5.3 2.6a4.3 4.3 0 0 0-.1 3.3 4.7 4.7 0 0 0-1.3 3.3c0 4.7 2.8 5.7 5.5 6A3 3 0 0 0 8.6 17.5V21" /></svg>
+            </ContactIcon>
+          </div>
+        </div>
+      </section>
+
+      <footer>
         <span className="footer-mark">© {new Date().getFullYear()} Arpit Kuriyal</span>
       </footer>
     </main>
