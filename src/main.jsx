@@ -8,6 +8,14 @@ const mediumPost = 'https://medium.com/@arpitkuriyal2002/the-two-files-every-go-
 
 const projects = [
   {
+    name: 'Business Drift',
+    href: `${github}/business-drift`,
+    stack: 'Go · React',
+    details: 'Stripe · HubSpot status matching',
+    description:
+      'A customer risk dashboard for keeping business system records aligned.',
+  },
+  {
     name: 'Load Balancer',
     href: `${github}/load-balancer`,
     stack: 'Go · HTTP · Prometheus',
