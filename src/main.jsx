@@ -11,7 +11,7 @@ const projects = [
     name: 'Business Drift',
     href: `${github}/business-drift`,
     stack: 'Go · React',
-    details: 'Stripe · HubSpot status matching',
+    details: 'Stripe · HubSpot status mismatch detection',
     description:
       'A customer risk dashboard that detects status mismatches between Stripe and HubSpot.',
   },
